@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Text, View } from "react-native";
+import PokemonCard from "@/components/PokemonCard";
 import { get } from "react-native/Libraries/TurboModule/TurboModuleRegistry"
 
 export default function Index() {
@@ -31,7 +32,10 @@ export default function Index() {
     <View>
       {
         results.map((item) => (
-          <Text key={item.name}>{item.name}</Text>
+          <PokemonCard 
+          key={item.name} 
+          name={item.name} 
+          url={item.url} />
         ))
       }
     </View>
